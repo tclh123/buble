@@ -4,5 +4,6 @@
 
 tmp/
 local/
+reference/
 
 gamejs/
