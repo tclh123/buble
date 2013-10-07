@@ -4,11 +4,17 @@
     <title>hello gamejs</title>
     <!-- styling -->
     <style type=text/css>
-        body{
-           background:#fff;
-           color:#222;
-           margin:1em 0 2em 6em;
-           padding:0;
+        html, body {
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          padding: 0;
+          font-family: verdana, helvetica, sans-serif;
+          line-height: 1.6;
+          color: white;
+        }
+        canvas {
+          border: 10px black solid;
         }
     </style>
     <script data-main="static/js/app" src="static/js/lib/requirejs/require-2.1.8.js"></script>
@@ -19,9 +25,6 @@
          loading...
         </div>
         <canvas id="gjs-canvas"></canvas>
-        <p>
-        powered by <a href="http://tclh123.com">tclh123</a>.
-        </p>
     </div>
 </body>
 </html>
