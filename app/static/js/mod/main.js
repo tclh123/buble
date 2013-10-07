@@ -1,17 +1,30 @@
 define([
     'gamejs',
     'mod/constants',
-],function(gamejs, constants) {
+    'mod/screen',
+    'mod/world',
+],function(gamejs, constants, screen, World) {
     return function() {
         var display = gamejs.display.setMode(constants.app.screenSize);
-        display.blit(
-            (new gamejs.font.Font('30px Sans-serif')).render('Hello World')
-        );
+        var world = new World();
+
+        screen.init();
+
+        /// eval-update-draw
+
+        // event handling
         gamejs.onEvent(function(event) {
-            // event handling
         });
+
+        // game loop
         gamejs.onTick(function(msDuration) {
-            // game loop
+            // update
+            //world.update(msDuration);
+            screen.update(msDuration, world);
+
+            // draw
+            display.clear();
+            screen.draw(display, world);
         });
     };
 });
